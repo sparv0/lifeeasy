@@ -12,7 +12,7 @@ const TOOLS = [
   { id: 'convert_image', title: 'Image Converter', desc: 'Convert between JPG, PNG, WEBP, and GIF formats.', icon: '🔁', type: 'server', accept: 'image/*' }
 ];
 
-const BACKEND_URL = "http://localhost:8000";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 
 // --- Starfield Component ---
 function Starfield({ theme }) {
