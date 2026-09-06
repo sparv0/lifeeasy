@@ -29,7 +29,7 @@ function Starfield({ theme }) {
     const ctx = canvas.getContext('2d');
     let animationFrameId;
     let stars = [];
-    const numStars = 200;
+    const numStars = 400; // Increased for a denser starfield
 
     let mouse = { x: null, y: null };
     const handleMouseMove = (e) => { mouse.x = e.clientX; mouse.y = e.clientY; };
@@ -219,8 +219,13 @@ function App() {
     <>
       <Starfield theme={theme} />
       
-      <div className="navbar" onClick={() => setActiveTool(null)}>
-        <h1>OmniConvert.</h1>
+      <div className="navbar">
+        <h1 onClick={() => setActiveTool(null)}>OmniConvert.</h1>
+        <div className="nav-links">
+          <a href="#" onClick={(e) => { e.preventDefault(); setActiveTool(null); }}>Tools</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); }}>API</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); }}>Pricing</a>
+        </div>
       </div>
       
       <div className="main-content">
